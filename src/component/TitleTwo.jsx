@@ -6,7 +6,7 @@ const TitleTwo = () => {
     <>
       <Row>
         <Col>
-          <h2 className="fw-600 color-black text-capitalize">{props.title}</h2>
+          <h2 className="fw-600 color-black text-capitalize">props.title</h2>
         </Col>
         <Col md={3} className="d-flex justify-content-end align-items-center">
           <Form.Select aria-label="Last Year" className="w-50 rounded-pill">

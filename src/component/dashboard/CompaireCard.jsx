@@ -5,32 +5,54 @@ import { Card, Col, Row } from "react-bootstrap";
 import { data } from "../../data";
 
 const CompaireCard = () => {
-  const [data, setData] = useState([]);
+  //   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    GetData();
-  }, []);
-  const GetData = async () => {
-    axios.get(`data`).then((res) => {
-      const row = res.data;
-      setData(row);
-    });
-  };
+  //   useEffect(() => {
+  //     GetData();
+  //   }, []);
+  //   const GetData = async () => {
+  //     axios.get(`data`).then((res) => {
+  //       const row = res.data;
+  //       setData(row);
+  //     });
+  //   };
 
+  const Tcard = [
+    {
+      title: "camera mi 360",
+      price: 345,
+      chartrate: "$678",
+    },
+    {
+      title: "camera mi 360",
+      price: 345,
+      chartrate: "$678",
+    },
+    {
+      title: "camera mi 360",
+      price: 345,
+      chartrate: "$678",
+    },
+  ];
   return (
     <>
       <Row className="pt-4">
-        {data.map((item) => {
-          <Col lg={4}>
-            <Card className="rounded p-0">
-              <Card.Body>
-                <h6 className="text-capitalize">Purches</h6>
-                <div className="d-flex justify-content-start">
-                  <h3 className="fw-600 ">324</h3> <p>+4234</p>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>;
+        {Tcard.map((item, index) => {
+          return (
+            <>
+              <Col lg={4} key={index}>
+                <Card className="rounded p-0">
+                  <Card.Body>
+                    <h6 className="text-capitalize">{item.title}</h6>
+                    <div className="d-flex justify-content-start">
+                      <h3 className="fw-600 ">{item.price}</h3>{" "}
+                      <p>{item.chartrate}</p>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </>
+          );
         })}
       </Row>
     </>
