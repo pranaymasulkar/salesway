@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import BarChart from "../component/dashboard/BarChart";
 import CompaireCard from "../component/dashboard/CompaireCard";
 import DataTable from "../component/dashboard/DataTable";
 import TitleOne from "../component/TitleOne";
@@ -22,6 +23,9 @@ const Home = () => {
                     </Card.Body>
                   </Card>
                 </Row>
+                <div>
+                  <BarChart />
+                </div>
               </Col>
               <Col lg={3}></Col>
             </Row>
