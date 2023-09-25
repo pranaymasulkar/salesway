@@ -6,12 +6,12 @@ const MainLayout = (props) => {
   return (
     <>
       <main className="myreal-container">
-        <aside className="sidebar d-none d-md-none d-lg-flex">
+        <aside className="sidebar d-none d-md-none d-lg-flex p-3">
           <Sidebar />
         </aside>
 
         <section className="main-content">
-          <section className="px-3">{children}</section>
+          <section>{children}</section>
         </section>
       </main>
     </>

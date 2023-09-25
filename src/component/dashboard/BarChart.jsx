@@ -1,5 +1,6 @@
 import React from "react";
 import { Chart } from "react-google-charts";
+import TitleTwo from "../TitleTwo";
 
 export const data = [
   ["Year", "Sales", "Expenses"],
@@ -13,19 +14,22 @@ export const data = [
 
 export const options = {
   chart: {
-    title: "Company Performance",
-    subtitle: "Sales, Expenses, and Profit: 2014-2017",
+    // title: "Comparison",
+    // subtitle: "Sales, Expenses, and Profit: 2014-2017",
   },
 };
 
 export default function BarChart() {
   return (
-    <Chart
-      chartType="Bar"
-      width="100%"
-      height="400px"
-      data={data}
-      options={options}
-    />
+    <section className="Barchart py-5">
+      <TitleTwo title="Comparison" />
+      <Chart
+        chartType="Bar"
+        width="100%"
+        height="200px"
+        data={data}
+        options={options}
+      />
+    </section>
   );
 }

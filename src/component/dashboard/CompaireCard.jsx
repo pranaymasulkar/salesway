@@ -19,17 +19,17 @@ const CompaireCard = () => {
 
   const Tcard = [
     {
-      title: "camera mi 360",
+      title: "purchase",
       price: 345,
       chartrate: "$678",
     },
     {
-      title: "camera mi 360",
+      title: "revanue",
       price: 345,
       chartrate: "$678",
     },
     {
-      title: "camera mi 360",
+      title: "return",
       price: 345,
       chartrate: "$678",
     },
@@ -41,12 +41,16 @@ const CompaireCard = () => {
           return (
             <>
               <Col lg={4} key={index}>
-                <Card className="rounded p-0">
+                <Card className="rounded p-0 border-0 shadow-sm">
                   <Card.Body>
-                    <h6 className="text-capitalize">{item.title}</h6>
-                    <div className="d-flex justify-content-start">
-                      <h3 className="fw-600 ">{item.price}</h3>{" "}
-                      <p>{item.chartrate}</p>
+                    <h6 className="text-capitalize fs-15 fw-400">
+                      {item.title}
+                    </h6>
+                    <div className="d-flex justify-content-start align-items-center">
+                      <h2 className="fw-600 mb-0">{item.price}</h2>
+                      <p className="m-0 border-1 bg-success px-2 py-1 rounded-pill text-white fs-11 ms-2 opacity-50">
+                        {item.chartrate}
+                      </p>
                     </div>
                   </Card.Body>
                 </Card>
