@@ -24,7 +24,7 @@ const Sidebar = () => {
             setting
           </NavLink>
           <NavLink
-            to="/customers"
+            to="/team"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link" : isActive ? "nav-link active" : "nav-link"
             }
@@ -45,7 +45,7 @@ const Sidebar = () => {
             Menu
           </Link>
           <NavLink
-            to="/agents"
+            to="/campaigns"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link" : isActive ? "nav-link active" : "nav-link"
             }
@@ -54,7 +54,7 @@ const Sidebar = () => {
             campaigns
           </NavLink>
           <NavLink
-            to="/properties"
+            to="/flows"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link" : isActive ? "nav-link active" : "nav-link"
             }
@@ -63,7 +63,7 @@ const Sidebar = () => {
             flows
           </NavLink>
           <NavLink
-            to="/projects"
+            to="/intigrations"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link" : isActive ? "nav-link active" : "nav-link"
             }
@@ -72,7 +72,7 @@ const Sidebar = () => {
             intigrations
           </NavLink>
           <NavLink
-            to="/events"
+            to="/customers"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link" : isActive ? "nav-link active" : "nav-link"
             }
