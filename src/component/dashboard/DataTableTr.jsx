@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 const DataTableTr = () => {
-  //   const [tbdata, setTbdata] = useState([]);
-  //   useEffect(() => {
-  //     GetTdata();
-  //   }, []);
+  const [tbdata, setTbdata] = useState([]);
 
-  //   const GetTdata = () => {
-  //     axios.get(`https://jsonplaceholder.typicode.com/posts`).then((res) => {
-  //       const row = res.data;
-  //       console.log(row);
-  //       setTbdata(row);
-  //     });
-  //   };
+  const getData = () => {
+    axios
+      .get(
+        `http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_
+        api_3/`
+      )
+      .then((res) => {
+        const row = res.data;
+        setTbdata(row);
+        console.log(row);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const trdata = [
     {
@@ -46,12 +53,12 @@ const DataTableTr = () => {
   ];
   return (
     <>
-      {trdata &&
-        trdata.map((item, index) => {
+      {tbdata &&
+        tbdata.map((item, index) => {
           return (
             <>
               <tr key={index}>
-                <td>{item.product}</td>
+                <td>{item.name}</td>
                 <td>{item.solid_amount}</td>
                 <td>{item.unit_price}</td>
                 <td>{item.ravanu}</td>
