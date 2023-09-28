@@ -7,23 +7,23 @@ import { data } from "../../data";
 const CompaireCard = () => {
   const [data, setData] = useState([]);
 
-  const getData = () => {
-    axios
-      .get(
-        `http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_
-        api_3/`
-      )
-      .then((res) => {
-        const row = res.data;
-        setData(row);
-        console.log(row);
-      })
-      .catch((error) => console.log(error));
-  };
+  // const getData = () => {
+  //   axios
+  //     .get(
+  //       `http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_
+  //       api_3/`
+  //     )
+  //     .then((res) => {
+  //       const row = res.data;
+  //       setData(row);
+  //       console.log(row);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   const Tcard = [
     {

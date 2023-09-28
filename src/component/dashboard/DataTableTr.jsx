@@ -1,50 +1,59 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 const DataTableTr = () => {
-  const [tbdata, setTbdata] = useState([]);
+  const [data, setData] = useState([]);
 
-  // const getData = () => {
-  //   axios
-  //     .get(
-  //       `http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_
-  //       api_3/`
-  //     )
-  //     .then((res) => {
-  //       const row = res.data;
-  //       setTbdata(row);
-  //       console.log(row);
-  //     })
-  //     .catch((error) => console.log(error));
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_api_5/",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           // neutral: neutral,
+  //         }),
+  //       }
+  //     );
+
+  //     if (response.ok) {
+  //       const responseData = await response.json();
+  //       setData(responseData);
+  //       console.log(responseData);
+  //     } else {
+  //       console.error("Failed to fetch data");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
   // };
 
   useEffect(() => {
-    // getData();
-
-    const url = `http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_
-  api_3/`;
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(),
-    })
-      .then((res) => {
-        const row = res.response.json();
-        setTbdata(row);
-        console.log(row);
-        // Process the response data
+    // fetchData();
+    axios
+      .post(
+        "/http://ec2-34-227-25-226.compute-1.amazonaws.com:8000/sample_assignment_api_5/",
+        {
+          firstName: "trial",
+          lastName: "assignment123",
+        }
+      )
+      .then(function (response) {
+        // console.log(response);
+        const responseData = response.json();
+        setData(responseData);
+        console.log(responseData);
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        // Handle any errors
+      .catch(function (error) {
+        console.log(error);
       });
   }, []);
 
   return (
     <>
-      {tbdata.map((item, index) => {
+      {data.map((item, index) => {
         return (
           <tr key={index}>
             <td>{item.name}</td>

@@ -8,12 +8,14 @@ import Campaigns from './views/Campaigns';
 import Flows from './views/Flows';
 import Intigrations from './views/Intigrations';
 import Customers from './views/Customers';
+import Login from './auth/Login';
 
 function App() {
   return (
     <>
      <Routes>
-        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/" element={<Login />}/>
+        <Route exact path="/home" element={<Home />}/>
         <Route exact path="/setting" element={<Setting />}/>
         <Route exact path="/team" element={<Team />}/>
         <Route exact path="/campaigns" element={<Campaigns />}/>
